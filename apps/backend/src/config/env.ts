@@ -34,9 +34,9 @@ const EnvSchema = z.object({
 
   LOG_LEVEL: z.string().default("info"),
 
-  MERCADOLIVRE_APP_ID: z.string(),
-  MERCADOLIVRE_CLIENT_SECRET: z.string(),
-  MERCADOLIVRE_REDIRECT_URI: z.string().url(),
+  MERCADOLIVRE_APP_ID: z.string().optional(),
+  MERCADOLIVRE_CLIENT_SECRET: z.string().optional(),
+  MERCADOLIVRE_REDIRECT_URI: z.string().url().optional(),
 });
 
 export type Env = z.infer<typeof EnvSchema>;
