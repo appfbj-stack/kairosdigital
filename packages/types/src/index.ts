@@ -58,7 +58,7 @@ export type ChatRequest = z.infer<typeof ChatRequestSchema>;
 // ============================================
 export const ContactCreateSchema = z.object({
   name: z.string().min(1),
-  email: z.string().email().optional(),
+  email: z.string().optional(),
   phone: z.string().optional(),
   company: z.string().optional(),
   jobTitle: z.string().optional(),
