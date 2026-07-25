@@ -1,0 +1,20 @@
+<svg width="1080" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1080" height="1080" fill="#ffffff"/>
+  <!-- Photo placeholder -->
+  <rect x="140" y="180" width="800" height="500" rx="24" fill="#e0e0e0"/>
+  <text x="540" y="430" font-family="Inter,sans-serif" font-size="24" fill="#777777" text-anchor="middle">
+    Foto: pastor em tablet (mockup)
+  </text>
+  <!-- Accent bar -->
+  <rect x="0" y="0" width="20" height="1080" fill="#2e7d32"/>
+  <text x="540" y="300" font-family="Inter,sans-serif" font-size="84" font-weight="bold" fill="#2e7d32" text-anchor="middle" letter-spacing="-0.5">
+    Líderes que crescem usam Kairos
+  </text>
+  <text x="540" y="420" font-family="Inter,sans-serif" font-size="44" fill="#2e7d32" text-anchor="middle">
+    Membros, finanças, cultos tudo em um só lugar
+  </text>
+  <rect x="340" y="720" width="400" height="120" rx="24" fill="#2e7d32"/>
+  <text x="540" y="790" font-family="Inter,sans-serif" font-size="48" fill="#ffffff" text-anchor="middle">
+    Teste grátis
+  </text>
+</svg>

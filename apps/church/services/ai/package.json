@@ -1,0 +1,13 @@
+{
+  "name": "@kairos/services-ai",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./kairos-ai.ts",
+  "types": "./kairos-ai.ts",
+  "exports": {
+    ".": "./kairos-ai.ts"
+  },
+  "dependencies": {
+    "@kairos/types": "workspace:*"
+  }
+}

@@ -1,0 +1,20 @@
+<svg width="1080" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="haze" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#4a006e;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="#000000"/>
+  <circle cx="540" cy="540" r="400" fill="url(#haze)"/>
+  <text x="540" y="460" font-family="Inter,sans-serif" font-size="92" font-weight="bold" fill="#ffd700" text-anchor="middle" letter-spacing="-1">
+    A tecnologia que serve ao Reino
+  </text>
+  <text x="540" y="580" font-family="Inter,sans-serif" font-size="48" fill="#ffd700" text-anchor="middle">
+    IA para sermões, check‑in de celulas, relatórios automáticos
+  </text>
+  <rect x="340" y="720" width="400" height="120" rx="24" fill="#ffd700"/>
+  <text x="540" y="790" font-family="Inter,sans-serif" font-size="48" fill="#000000" text-anchor="middle">
+    Saiba mais
+  </text>
+</svg>

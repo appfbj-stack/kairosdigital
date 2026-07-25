@@ -1,0 +1,22 @@
+name: Deploy to Dokploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Dokploy detecta o push no GitHub e dispara o redeploy automaticamente quando
+# o app estiver vinculado a este repositório. Este workflow é apenas um trigger
+# manual extra via Dokploy API (opcional).
+
+jobs:
+  notify-dokploy:
+    runs-on: ubuntu-latest
+    if: ${{ secrets.DOKPLOY_WEBHOOK_URL != '' }}
+    steps:
+      - name: Trigger Dokploy redeploy
+        run: |
+          curl -X POST "${{ secrets.DOKPLOY_WEBHOOK_URL }}" \
+            -H "Authorization: Bearer ${{ secrets.DOKPLOY_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{"ref": "${{ github.sha }}", "branch": "main"}'

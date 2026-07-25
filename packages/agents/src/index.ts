@@ -1,0 +1,14 @@
+export * from "./types";
+export * from "./registry";
+export * from "./tools";
+export * from "./prompts";
+export { CrmAgent } from "./agents/crm.agent";
+export { AgendaAgent } from "./agents/agenda.agent";
+export { WhatsAppAgent } from "./agents/whatsapp.agent";
+export { FollowupAgent } from "./agents/followup.agent";
+export { FinanceiroAgent } from "./agents/financeiro.agent";
+export { SuporteAgent } from "./agents/suporte.agent";
+export { DevOpsAgent } from "./agents/devops.agent";
+export { AutomacaoAgent } from "./agents/automacao.agent";
+export { MercadoLivreAgent } from "./agents/mercadolivre.agent";
+export { OrquestradorAgent } from "./agents/orquestrador.agent";

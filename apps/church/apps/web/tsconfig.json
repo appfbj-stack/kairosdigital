@@ -1,0 +1,113 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@/modules/*": [
+        "../../modules/*"
+      ],
+      "@kairos/ui": [
+        "../../packages/ui/src/index"
+      ],
+      "@kairos/types": [
+        "../../packages/types/src/index"
+      ],
+      "@kairos/utils": [
+        "../../packages/utils/src/index"
+      ],
+      "@kairos/services-ai": [
+        "../../services/ai/kairos-ai"
+      ],
+      "@kairos/chat": [
+        "../../modules/chat/index"
+      ],
+      "@kairos/chat/types": [
+        "../../modules/chat/types/index"
+      ],
+      "@kairos/chat/schemas": [
+        "../../modules/chat/schemas/index"
+      ],
+      "@kairos/cells": [
+        "../../modules/cells/index"
+      ],
+      "@kairos/cells/types": [
+        "../../modules/cells/types/index"
+      ],
+      "@kairos/cells/schemas": [
+        "../../modules/cells/schemas/index"
+      ],
+      "@kairos/finance": [
+        "../../modules/finance/index"
+      ],
+      "@kairos/finance/types": [
+        "../../modules/finance/types/index"
+      ],
+      "@kairos/finance/schemas": [
+        "../../modules/finance/schemas/index"
+      ],
+      "@kairos/members": [
+        "../../modules/members/index"
+      ],
+      "@kairos/members/types": [
+        "../../modules/members/types/index"
+      ],
+      "@kairos/members/schemas": [
+        "../../modules/members/schemas/index"
+      ],
+      "@kairos/ministries": [
+        "../../modules/ministries/index"
+      ],
+      "@kairos/ministries/types": [
+        "../../modules/ministries/types/index"
+      ],
+      "@kairos/ministries/schemas": [
+        "../../modules/ministries/schemas/index"
+      ],
+      "@kairos/events": [
+        "../../modules/events/index"
+      ],
+      "@kairos/events/types": [
+        "../../modules/events/types/index"
+      ],
+      "@kairos/events/schemas": [
+        "../../modules/events/schemas/index"
+      ],
+      "@kairos/prayer": [
+        "../../modules/prayer/index"
+      ],
+      "@kairos/prayer/types": [
+        "../../modules/prayer/types/index"
+      ],
+      "@kairos/prayer/schemas": [
+        "../../modules/prayer/schemas/index"
+      ],
+      "@kairos/sermons": [
+        "../../modules/sermons/index"
+      ],
+      "@kairos/sermons/types": [
+        "../../modules/sermons/types/index"
+      ],
+      "@kairos/sermons/schemas": [
+        "../../modules/sermons/schemas/index"
+      ]
+    },
+    "noEmit": true,
+    "isolatedModules": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
