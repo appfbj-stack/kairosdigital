@@ -29,6 +29,7 @@ export async function authRoutes(app: FastifyInstance) {
       httpOnly: true,
       secure: true,
       sameSite: "lax",
+      domain: ".kairosk.fbautomacao.space",
       maxAge: 60 * 60 * 24 * 7,
     });
     return { user, token, refreshToken: rt };
