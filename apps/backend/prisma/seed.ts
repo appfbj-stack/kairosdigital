@@ -82,64 +82,62 @@ async function main() {
   });
   console.log(`✅ Super admin: ${superadmin.email}`);
 
-  // ----- Demo tenant (apenas em dev) -----
-  if (process.env.NODE_ENV !== "production") {
-    const basicPlan = await prisma.plan.findUnique({ where: { tier: PlanTier.BASIC } });
-    if (!basicPlan) throw new Error("Plano BASIC não encontrado");
+  // ----- Demo tenant -----
+  const basicPlan = await prisma.plan.findUnique({ where: { tier: PlanTier.BASIC } });
+  if (!basicPlan) throw new Error("Plano BASIC não encontrado");
 
-    const demoTenant = await prisma.tenant.upsert({
-      where: { slug: "demo" },
-      update: {},
-      create: {
-        slug: "demo",
-        name: "Empresa Demo",
-        subscription: {
-          create: {
-            planId: basicPlan.id,
-            status: SubscriptionStatus.TRIAL,
-            trialEndsAt: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000),
-            currentPeriodEnd: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
-          },
+  const demoTenant = await prisma.tenant.upsert({
+    where: { slug: "demo" },
+    update: {},
+    create: {
+      slug: "demo",
+      name: "Empresa Demo",
+      subscription: {
+        create: {
+          planId: basicPlan.id,
+          status: SubscriptionStatus.TRIAL,
+          trialEndsAt: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000),
+          currentPeriodEnd: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
         },
       },
-    });
+    },
+  });
 
-    const ownerHash = await bcrypt.hash("Demo123!", 12);
-    await prisma.user.upsert({
-      where: { tenantId_email: { tenantId: demoTenant.id, email: "owner@demo.local" } },
-      update: {},
-      create: {
-        tenantId: demoTenant.id,
-        email: "owner@demo.local",
-        passwordHash: ownerHash,
-        name: "Owner Demo",
-        role: UserRole.OWNER,
-        emailVerifiedAt: new Date(),
+  const ownerHash = await bcrypt.hash(superPass, 12);
+  await prisma.user.upsert({
+    where: { tenantId_email: { tenantId: demoTenant.id, email: superEmail } },
+    update: {},
+    create: {
+      tenantId: demoTenant.id,
+      email: superEmail,
+      passwordHash: ownerHash,
+      name: superName,
+      role: UserRole.OWNER,
+      emailVerifiedAt: new Date(),
+    },
+  });
+
+  await prisma.pipeline.upsert({
+    where: { id: `${demoTenant.id}-default` },
+    update: {},
+    create: {
+      id: `${demoTenant.id}-default`,
+      tenantId: demoTenant.id,
+      name: "Vendas",
+      isDefault: true,
+      stages: {
+        create: [
+          { name: "Lead", order: 0, color: "#94a3b8", probability: 10 },
+          { name: "Contato feito", order: 1, color: "#3b82f6", probability: 30 },
+          { name: "Proposta enviada", order: 2, color: "#f59e0b", probability: 60 },
+          { name: "Negociação", order: 3, color: "#a855f7", probability: 80 },
+          { name: "Fechado", order: 4, color: "#10b981", probability: 100 },
+        ],
       },
-    });
+    },
+  });
 
-    await prisma.pipeline.upsert({
-      where: { id: `${demoTenant.id}-default` },
-      update: {},
-      create: {
-        id: `${demoTenant.id}-default`,
-        tenantId: demoTenant.id,
-        name: "Vendas",
-        isDefault: true,
-        stages: {
-          create: [
-            { name: "Lead", order: 0, color: "#94a3b8", probability: 10 },
-            { name: "Contato feito", order: 1, color: "#3b82f6", probability: 30 },
-            { name: "Proposta enviada", order: 2, color: "#f59e0b", probability: 60 },
-            { name: "Negociação", order: 3, color: "#a855f7", probability: 80 },
-            { name: "Fechado", order: 4, color: "#10b981", probability: 100 },
-          ],
-        },
-      },
-    });
-
-    console.log(`✅ Tenant demo: ${demoTenant.slug}`);
-  }
+  console.log(`✅ Tenant demo: ${demoTenant.slug}`);
 
   console.log("🎉 Seed completo");
 }

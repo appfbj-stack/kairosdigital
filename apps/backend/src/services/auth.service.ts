@@ -21,10 +21,11 @@ export const authService = {
       ? { tenant: { slug: input.tenantSlug }, email: input.email }
       : { email: input.email };
 
-    const users = await prisma.user.findMany({
+    let users = await prisma.user.findMany({
       where,
       include: { tenant: true },
     });
+    users = users.sort((a, b) => (a.tenantId ? -1 : 0) - (b.tenantId ? -1 : 0));
     const user = users[0];
     if (!user || !user.isActive) throw new UnauthorizedError("Credenciais inválidas");
     const ok = await verifyPassword(input.password, user.passwordHash);
