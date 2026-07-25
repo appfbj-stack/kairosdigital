@@ -1,5 +1,5 @@
 import type { FastifyRequest, FastifyReply } from "fastify";
-import { UnauthorizedError, ForbiddenError } from "@hermes/utils";
+import { UnauthorizedError, ForbiddenError } from "@kairosdigital/utils";
 
 export async function authenticate(req: FastifyRequest, _reply: FastifyReply) {
   try {

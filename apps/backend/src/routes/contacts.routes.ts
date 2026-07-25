@@ -1,7 +1,7 @@
 import type { FastifyInstance } from "fastify";
-import { ContactCreateSchema, ContactUpdateSchema, PaginationSchema } from "@hermes/types";
+import { ContactCreateSchema, ContactUpdateSchema, PaginationSchema } from "@kairosdigital/types";
 import { requireTenant } from "../middleware/tenant.js";
-import { NotFoundError } from "@hermes/utils";
+import { NotFoundError } from "@kairosdigital/utils";
 
 export async function contactsRoutes(app: FastifyInstance) {
   app.get(

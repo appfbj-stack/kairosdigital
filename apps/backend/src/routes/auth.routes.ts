@@ -1,5 +1,5 @@
 import type { FastifyInstance } from "fastify";
-import { LoginSchema, RegisterTenantSchema } from "@hermes/types";
+import { LoginSchema, RegisterTenantSchema } from "@kairosdigital/types";
 import { authService } from "../services/auth.service.js";
 
 export async function authRoutes(app: FastifyInstance) {

@@ -74,7 +74,7 @@ export async function adminRoutes(app: FastifyInstance) {
     "/admin/users/:id/reset-password",
     { preHandler: [app.authenticate, requireSuperadmin] },
     async (req) => {
-      const { hashPassword } = await import("@hermes/utils");
+      const { hashPassword } = await import("@kairosdigital/utils");
       const passwordHash = await hashPassword(req.body.password);
       return app.prisma.user.update({
         where: { id: req.params.id },

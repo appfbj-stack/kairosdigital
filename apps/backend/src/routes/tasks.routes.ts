@@ -1,5 +1,5 @@
 import type { FastifyInstance } from "fastify";
-import { TaskCreateSchema, AppointmentCreateSchema } from "@hermes/types";
+import { TaskCreateSchema, AppointmentCreateSchema } from "@kairosdigital/types";
 import { requireTenant } from "../middleware/tenant.js";
 
 export async function tasksRoutes(app: FastifyInstance) {

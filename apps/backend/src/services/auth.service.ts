@@ -6,11 +6,11 @@ import {
   HermesError,
   UnauthorizedError,
   slugify,
-} from "@hermes/utils";
+} from "@kairosdigital/utils";
 import type {
   LoginInput,
   RegisterTenantInput,
-} from "@hermes/types";
+} from "@kairosdigital/types";
 import { PlanTier, SubscriptionStatus, UserRole } from "@prisma/client";
 
 const REFRESH_TTL_DAYS = 30;

@@ -1,5 +1,5 @@
 import type { FastifyRequest } from "fastify";
-import { ForbiddenError, UnauthorizedError } from "@hermes/utils";
+import { ForbiddenError, UnauthorizedError } from "@kairosdigital/utils";
 
 declare module "fastify" {
   interface FastifyRequest {

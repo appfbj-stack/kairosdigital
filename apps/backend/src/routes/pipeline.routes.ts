@@ -1,7 +1,7 @@
 import type { FastifyInstance } from "fastify";
 import { z } from "zod";
 import { requireTenant } from "../middleware/tenant.js";
-import { NotFoundError } from "@hermes/utils";
+import { NotFoundError } from "@kairosdigital/utils";
 
 const PipelineCreateSchema = z.object({
   name: z.string().min(1),

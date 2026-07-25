@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { streamChat } from "../../lib/api";
-import { Button } from "@hermes/ui";
+import { Button } from "@kairosdigital/ui";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 

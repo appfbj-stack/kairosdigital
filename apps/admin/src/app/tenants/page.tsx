@@ -1,7 +1,7 @@
 "use client";
 
 import useSWR from "swr";
-import { Card, Badge, Button } from "@hermes/ui";
+import { Card, Badge, Button } from "@kairosdigital/ui";
 import { apiFetch } from "../../lib/api";
 
 interface Tenant {

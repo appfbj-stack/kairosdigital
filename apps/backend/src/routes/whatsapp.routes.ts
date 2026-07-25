@@ -1,5 +1,5 @@
 import type { FastifyInstance } from "fastify";
-import { WhatsAppCreateInstanceSchema, WhatsAppSendMessageSchema } from "@hermes/types";
+import { WhatsAppCreateInstanceSchema, WhatsAppSendMessageSchema } from "@kairosdigital/types";
 import { whatsappService } from "../services/whatsapp.service.js";
 import { requireTenant } from "../middleware/tenant.js";
 

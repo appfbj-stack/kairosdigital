@@ -2,7 +2,7 @@ import { prisma } from "../lib/prisma.js";
 import { chatStream, type ORMessage } from "../lib/openrouter.js";
 import { ensureAiQuota, recordAiUsage } from "./billing.service.js";
 import { env } from "../config/env.js";
-import { ORQUESTRADOR_PROMPT } from "@hermes/agents";
+import { ORQUESTRADOR_PROMPT } from "@kairosdigital/agents";
 
 const HISTORY_LIMIT = 20;
 

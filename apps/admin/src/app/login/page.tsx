@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Button, Input, Card } from "@hermes/ui";
+import { Button, Input, Card } from "@kairosdigital/ui";
 import { apiFetch } from "../../lib/api";
 
 export default function AdminLogin() {

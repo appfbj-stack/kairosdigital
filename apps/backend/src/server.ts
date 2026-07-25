@@ -20,7 +20,7 @@ import { webhookRoutes } from "./routes/webhooks.routes.js";
 import { adminRoutes } from "./routes/admin.routes.js";
 import { usageRoutes } from "./routes/usage.routes.js";
 import { integrationsRoutes } from "./routes/integrations.routes.js";
-import { HermesError } from "@hermes/utils";
+import { HermesError } from "@kairosdigital/utils";
 import { ZodError } from "zod";
 
 declare module "fastify" {

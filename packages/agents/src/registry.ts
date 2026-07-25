@@ -1,5 +1,5 @@
 import type { BaseAgent } from "./types";
-import type { AgentName } from "@hermes/types";
+import type { AgentName } from "@kairosdigital/types";
 
 const registry = new Map<AgentName, BaseAgent>();
 

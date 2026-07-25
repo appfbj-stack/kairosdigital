@@ -1,5 +1,5 @@
 import { prisma } from "../lib/prisma.js";
-import { QuotaExceededError } from "@hermes/utils";
+import { QuotaExceededError } from "@kairosdigital/utils";
 
 /**
  * Garante que o tenant ainda pode consumir mais 1 mensagem IA dentro do mês.

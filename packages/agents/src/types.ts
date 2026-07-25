@@ -1,4 +1,4 @@
-import type { ChatMessage } from "@hermes/types";
+import type { ChatMessage } from "@kairosdigital/types";
 import { z } from "zod";
 
 export interface AgentContext {

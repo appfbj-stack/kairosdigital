@@ -1,5 +1,5 @@
 import type { FastifyInstance } from "fastify";
-import { ChatRequestSchema } from "@hermes/types";
+import { ChatRequestSchema } from "@kairosdigital/types";
 import { streamChat } from "../services/chat.service.js";
 import { requireTenant } from "../middleware/tenant.js";
 

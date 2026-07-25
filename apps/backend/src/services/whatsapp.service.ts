@@ -2,7 +2,7 @@ import { prisma } from "../lib/prisma.js";
 import { evolutionClient } from "../lib/evolution.js";
 import { ensureWhatsAppInstanceQuota, recordMessageUsage } from "./billing.service.js";
 import { env } from "../config/env.js";
-import { HermesError, jidToPhone, phoneToJid, slugify } from "@hermes/utils";
+import { HermesError, jidToPhone, phoneToJid, slugify } from "@kairosdigital/utils";
 
 export const whatsappService = {
   async createInstance(tenantId: string, name: string) {
