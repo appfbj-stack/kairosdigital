@@ -7,9 +7,7 @@ RUN corepack enable && corepack prepare pnpm@9.12.0 --activate
 COPY package.json pnpm-workspace.yaml pnpm-lock.yaml* turbo.json tsconfig.base.json ./
 COPY packages ./packages
 COPY apps/workers ./apps/workers
-COPY apps/backend/package.json ./apps/backend/package.json
-COPY apps/backend/prisma ./apps/backend/prisma
-COPY apps/backend/src ./apps/backend/src
+COPY apps/backend ./apps/backend
 RUN pnpm install --frozen-lockfile=false
 RUN npm install -g prisma@5.20.0
 RUN prisma generate --schema=/app/apps/backend/prisma/schema.prisma
