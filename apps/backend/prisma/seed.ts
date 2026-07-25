@@ -139,6 +139,60 @@ async function main() {
 
   console.log(`✅ Tenant demo: ${demoTenant.slug}`);
 
+  // ----- Demo Appointments -----
+  const now = new Date();
+  const appointments = [
+    {
+      tenantId: demoTenant.id,
+      title: "Reunião com Lead - João Silva",
+      description: "Apresentar proposta comercial",
+      startAt: new Date(now.getTime() + 1 * 24 * 60 * 60 * 1000),
+      endAt: new Date(now.getTime() + 1 * 24 * 60 * 60 * 1000 + 60 * 60 * 1000),
+      location: "Escritório",
+      status: "SCHEDULED",
+    },
+    {
+      tenantId: demoTenant.id,
+      title: "Follow-up Cliente Maria",
+      description: "Verificar satisfação com o produto",
+      startAt: new Date(now.getTime() + 2 * 24 * 60 * 60 * 1000),
+      endAt: new Date(now.getTime() + 2 * 24 * 60 * 60 * 1000 + 30 * 60 * 1000),
+      location: "Online",
+      status: "SCHEDULED",
+    },
+    {
+      tenantId: demoTenant.id,
+      title: "Demonstração do Produto",
+      description: "Demo para lead qualificado",
+      startAt: new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000 + 10 * 60 * 60 * 1000),
+      endAt: new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000 + 11 * 60 * 60 * 1000),
+      meetingUrl: "https://meet.kairosdigital.com/demo",
+      status: "SCHEDULED",
+    },
+    {
+      tenantId: demoTenant.id,
+      title: "Reunião de Planejamento",
+      description: "Planejamento semanal da equipe",
+      startAt: new Date(now.getTime() + 5 * 24 * 60 * 60 * 1000 + 8 * 60 * 60 * 1000),
+      endAt: new Date(now.getTime() + 5 * 24 * 60 * 60 * 1000 + 9 * 60 * 60 * 1000),
+      location: "Sala 301",
+      status: "SCHEDULED",
+    },
+    {
+      tenantId: demoTenant.id,
+      title: "Ligação com Parceiro",
+      description: "Alinhar estratégia de parceria",
+      startAt: new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000 + 14 * 60 * 60 * 1000),
+      endAt: new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000 + 14 * 60 * 60 * 1000 + 45 * 60 * 1000),
+      status: "SCHEDULED",
+    },
+  ];
+
+  for (const apt of appointments) {
+    await prisma.appointment.create({ data: apt });
+  }
+  console.log(`✅ ${appointments.length} agendamentos demo criados`);
+
   console.log("🎉 Seed completo");
 }
 
