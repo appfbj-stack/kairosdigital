@@ -3,7 +3,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import useSWR from "swr";
-import { Button, Card, Input, Badge } from "@hermes/ui";
+import { Button, Card, Input, Badge } from "@kairosdigital/ui";
 import { apiFetch } from "../../../lib/api";
 
 // ---------------------------------------------------------------------------

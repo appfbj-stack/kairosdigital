@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import useSWR from "swr";
-import { Button, Card, Badge, Input } from "@hermes/ui";
+import { Button, Card, Badge, Input } from "@kairosdigital/ui";
 import { apiFetch } from "../../../lib/api";
 
 interface Instance {

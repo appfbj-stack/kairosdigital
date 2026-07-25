@@ -2,7 +2,7 @@
 // @ts-nocheck
 
 import { useEffect, useState, useCallback } from "react";
-import { Button, Card, Input, Badge } from "@hermes/ui";
+import { Button, Card, Input, Badge } from "@kairosdigital/ui";
 import { apiFetch } from "../../../lib/api";
 
 // ── Types ────────────────────────────────────────────────────────────

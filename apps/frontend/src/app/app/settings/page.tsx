@@ -2,7 +2,7 @@
 // @ts-nocheck
 
 import useSWR from "swr";
-import { Card, Badge } from "@hermes/ui";
+import { Card, Badge } from "@kairosdigital/ui";
 import { apiFetch } from "../../../lib/api";
 
 interface Usage {

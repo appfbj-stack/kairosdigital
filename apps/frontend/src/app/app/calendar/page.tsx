@@ -2,7 +2,7 @@
 // @ts-nocheck
 
 import useSWR from "swr";
-import { Card } from "@hermes/ui";
+import { Card } from "@kairosdigital/ui";
 import { apiFetch } from "../../../lib/api";
 
 interface AppointmentItem {
