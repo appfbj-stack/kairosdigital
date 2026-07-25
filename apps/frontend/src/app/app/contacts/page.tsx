@@ -154,6 +154,7 @@ interface SidePanelProps {
 
 function SidePanel({ contact, pipelines, mode, onClose, onSaved, onDeleted, onEdit }: SidePanelProps) {
   const [saving, setSaving] = useState(false);
+  const [saveError, setSaveError] = useState<string | null>(null);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -190,6 +191,7 @@ function SidePanel({ contact, pipelines, mode, onClose, onSaved, onDeleted, onEd
 
   async function handleSave() {
     setSaving(true);
+    setSaveError(null);
     try {
       const body = {
         name: form.name,
@@ -208,6 +210,8 @@ function SidePanel({ contact, pipelines, mode, onClose, onSaved, onDeleted, onEd
         await apiFetch(`/contacts/${contact.id}`, { method: "PATCH", body: JSON.stringify(body) });
       }
       onSaved();
+    } catch (err: any) {
+      setSaveError(err?.message ?? "Erro ao salvar");
     } finally {
       setSaving(false);
     }
@@ -359,6 +363,12 @@ function SidePanel({ contact, pipelines, mode, onClose, onSaved, onDeleted, onEd
                   className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:focus:border-indigo-400"
                 />
               </div>
+
+              {saveError && (
+                <div className="rounded-lg border border-red-500/20 bg-red-900/10 px-4 py-3 text-sm text-red-400">
+                  {saveError}
+                </div>
+              )}
             </div>
           )}
         </div>
