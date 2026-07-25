@@ -3,6 +3,9 @@ version: "3.9"
 networks:
   kairos-net:
     driver: bridge
+  evogo-net:
+    external: true
+    name: evogo_evogo-network
 
 volumes:
   postgres-data:
@@ -117,7 +120,9 @@ services:
       LOG_LEVEL: ${LOG_LEVEL}
     volumes: [uploads:/app/uploads]
     ports: ["3001:3001"]
-    networks: [kairos-net]
+    networks:
+      - kairos-net
+      - evogo-net
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://localhost:3001/health"]
       interval: 30s
@@ -145,7 +150,9 @@ services:
       OPENROUTER_DEFAULT_MODEL: ${OPENROUTER_DEFAULT_MODEL}
       EVOLUTION_API_URL: ${EVOLUTION_API_URL}
       EVOLUTION_API_KEY: ${EVOLUTION_API_KEY}
-    networks: [kairos-net]
+    networks:
+      - kairos-net
+      - evogo-net
 
   frontend:
     build:
