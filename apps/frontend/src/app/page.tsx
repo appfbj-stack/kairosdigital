@@ -6,7 +6,7 @@ export default function HomePage() {
       <div className="w-full max-w-2xl text-center">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white/60 px-4 py-1.5 text-sm text-indigo-700 backdrop-blur dark:border-indigo-800 dark:bg-slate-900/60 dark:text-indigo-300">
           <span className="h-2 w-2 rounded-full bg-indigo-500"></span>
-          Hermes OS — Sistema operacional empresarial com IA
+          Kairos Digital — Sistema operacional empresarial com IA
         </div>
         <h1 className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-5xl font-bold tracking-tight text-transparent sm:text-6xl">
           Converse com sua empresa.

@@ -19,7 +19,7 @@ const EnvSchema = z.object({
   OPENROUTER_DEFAULT_MODEL: z.string().default("deepseek/deepseek-chat-v3.1"),
   OPENROUTER_FALLBACK_MODELS: z.string().default(""),
   OPENROUTER_HTTP_REFERER: z.string().optional(),
-  OPENROUTER_APP_TITLE: z.string().default("Hermes OS"),
+  OPENROUTER_APP_TITLE: z.string().default("Kairos Digital"),
 
   EVOLUTION_API_URL: z.string().url(),
   EVOLUTION_API_KEY: z.string(),

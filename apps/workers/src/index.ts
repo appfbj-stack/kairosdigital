@@ -2,7 +2,7 @@ import { followupWorker } from "./workers/followup.worker.js";
 import { whatsappWorker } from "./workers/whatsapp.worker.js";
 import { usageWorker } from "./workers/usage.worker.js";
 
-console.log("⚙️  Hermes Workers iniciando…");
+console.log("⚙️  Kairos Workers iniciando…");
 
 const workers = [followupWorker, whatsappWorker, usageWorker];
 

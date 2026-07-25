@@ -1,8 +1,8 @@
-—import type { Metadata } from "next";
+import type { Metadata } from "next";
 import "../styles/globals.css";
 
 export const metadata: Metadata = {
-  title: process.env.NEXT_PUBLIC_APP_NAME ?? "Hermes OS",
+  title: process.env.NEXT_PUBLIC_APP_NAME ?? "Kairos Digital",
   description: "Sistema Operacional Empresarial com IA — Tecnologia dos Deuses",
 };
 

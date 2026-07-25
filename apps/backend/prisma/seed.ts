@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log("🌱 Seeding Hermes OS database...");
+  console.log("🌱 Seeding Kairos Digital database...");
 
   // ----- Plans -----
   const plans = [

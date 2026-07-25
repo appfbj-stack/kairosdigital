@@ -28,7 +28,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
             <span className="text-base font-bold text-[#D4AF37]">H</span>
           </div>
           <div>
-            <p className="text-sm font-semibold text-[#F5F5F2]">Hermes OS</p>
+            <p className="text-sm font-semibold text-[#F5F5F2]">Kairos Digital</p>
             <p className="text-[10px] uppercase tracking-widest text-[#8A8A8A]">Tecnologia dos Deuses</p>
           </div>
         </Link>
@@ -42,7 +42,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
         {/* Footer */}
         <div className="border-t border-[#D4AF37]/15 px-5 py-3">
-          <p className="text-[10px] uppercase tracking-widest text-[#555]">v0.1.0 · Hermes OS</p>
+          <p className="text-[10px] uppercase tracking-widest text-[#555]">v0.1.0 · Kairos Digital</p>
         </div>
       </aside>
 

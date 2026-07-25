@@ -75,7 +75,7 @@ export default function RegisterPage() {
             Criar conta
           </h1>
           <p className="mt-1 text-sm text-[#8A8A8A]">
-            Comece a usar o Hermes OS gratuitamente
+            Comece a usar o Kairos Digital gratuitamente
           </p>
         </div>
 

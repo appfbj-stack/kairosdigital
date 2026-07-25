@@ -84,7 +84,7 @@ export function ChatInterface() {
     <div className="flex h-full flex-col">
       <header className="flex items-center justify-between border-b border-slate-200 bg-white px-6 py-3 dark:border-slate-800 dark:bg-slate-900">
         <div>
-          <h1 className="text-lg font-semibold">Hermes</h1>
+          <h1 className="text-lg font-semibold">Kairos</h1>
           <p className="text-xs text-slate-500">Converse com sua empresa</p>
         </div>
         {streaming && (

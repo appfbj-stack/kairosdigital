@@ -46,7 +46,7 @@ export default function LoginPage() {
             Bem-vindo de volta
           </h1>
           <p className="mt-1 text-sm text-[#8A8A8A]">
-            Entre na sua conta Hermes OS
+            Entre na sua conta Kairos Digital
           </p>
         </div>
 
