@@ -162,7 +162,7 @@ services:
       NODE_ENV: ${NODE_ENV}
       NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
       NEXT_PUBLIC_WS_URL: ${NEXT_PUBLIC_WS_URL}
-    ports: ["3000:3000"]
+    ports: ["3008:3000"]
     networks: [kairos-net]
 
   admin:
@@ -177,5 +177,5 @@ services:
     environment:
       NODE_ENV: ${NODE_ENV}
       NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
-    ports: ["3002:3000"]
+    ports: ["3009:3000"]
     networks: [kairos-net]
