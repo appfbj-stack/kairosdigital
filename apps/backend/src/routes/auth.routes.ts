@@ -24,6 +24,13 @@ export async function authRoutes(app: FastifyInstance) {
       role: user.role,
       email: user.email,
     });
+    reply.setCookie("hermes_token", token, {
+      path: "/",
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      maxAge: 60 * 15,
+    });
     return { user, token, refreshToken: rt };
   });
 
